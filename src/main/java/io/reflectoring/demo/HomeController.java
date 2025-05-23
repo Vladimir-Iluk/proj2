@@ -8,11 +8,17 @@ import java.util.List;
 
 @Controller
 public class HomeController {
-    @GetMapping
+    @GetMapping("/home")
     public String home(Model model) {
         var userName = "New User";
         model.addAttribute("userName", userName);
         return "page/home";
+    }
+    @GetMapping("/ifhome")
+    public String ifhome(Model model) {
+        var isAdmin = false;
+        model.addAttribute("isAdmin", isAdmin);
+        return "page/ifhome";
     }
     @GetMapping("/team")
     public String team(Model model) {
